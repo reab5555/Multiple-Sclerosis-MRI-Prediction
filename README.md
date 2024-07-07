@@ -19,7 +19,7 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 Each class contains 750 samples, ensuring a balanced dataset for training and evaluation.
 
 ## Cross-Validation
-To ensure robust evaluation and to prevent overfitting, we employed 6-fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation. This process is repeated six times, with each subset used once for validation.
+To ensure robust evaluation and to prevent overfitting, we employed 6-fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation.
 
 ## Hyperparameters
 The following table lists the hyperparameters used in our model:
