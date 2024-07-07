@@ -36,7 +36,22 @@ The following table lists the hyperparameters used in our model:
 | Device           | GPU if available|
 
 ## Model Architecture
-We utilized the Vision Transformer (ViT) model, specifically `ViTForImageClassification` from the Hugging Face library. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
+We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384` from the Hugging Face library. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
+
+### How Vision Transformer (ViT) Works
+- **Patch Embeddings:**
+  - An image is divided into fixed-size patches (e.g., 16x16).
+  - Each patch is flattened and linearly embedded into a fixed-size vector.
+  
+- **Positional Encoding:**
+  - Since Transformer models do not possess any inherent notion of sequential order, positional encodings are added to the patch embeddings to maintain spatial information.
+  
+- **Transformer Encoder:**
+  - The encoded patches are passed through a standard Transformer encoder, consisting of multi-head self-attention layers followed by feed-forward neural networks.
+  - This mechanism allows the model to capture contextual relationships between patches.
+
+- **Classification Head:**
+  - The output from the Transformer encoder is pooled and passed through a classification head (usually a fully connected layer) to get the final class probabilities.
 
 ### Detailed Architecture
 - **Base Vision Transformer:**
