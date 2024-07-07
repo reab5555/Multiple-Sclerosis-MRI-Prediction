@@ -71,12 +71,6 @@ Below are the results for the last epochs of each fold:
 | 5    | 5     | 0.4039     | 0.4531   | 0.7967  | 0.8000   | 0.8031    | 0.8000 |
 | 6    | 9     | 0.3273     | 0.3481   | 0.8227  | 0.8250   | 0.8257    | 0.8231 |
 
-### Average Metrics across all Folds
-| Metric          | Value   |
-|-----------------|---------|
-| Accuracy        | 0.8319  |
-| F1 Score        | 0.8293  |
-
 ### Class-wise Average Metrics
 | Class           | Precision | Recall | F1-Score |
 |-----------------|-----------|--------|----------|
@@ -84,6 +78,12 @@ Below are the results for the last epochs of each fold:
 | Control-Sagittal| 0.8069    | 0.8216 | 0.7978   |
 | MS-Axial        | 0.9087    | 0.8203 | 0.8541   |
 | MS-Sagittal     | 0.8410    | 0.7835 | 0.7975   |
+
+### Average Metrics across all Folds
+| Metric          | Value   |
+|-----------------|---------|
+| Accuracy        | 0.8319  |
+| F1 Score        | 0.8293  |
 
 ## Model Fine-Tuning
 In this project, we fine-tuned only the final layers of the Vision Transformer, retaining the majority of the base model's pre-trained weights. This approach allowed us to leverage the robust feature representations learned from the large-scale ImageNet dataset while adapting the classifier to our specific task.
