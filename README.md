@@ -42,28 +42,25 @@ We fine-tuned only the final layers of the Vision Transformer, retaining the maj
 ### Detailed Architecture
 - **Base Vision Transformer:**
   - Pre-trained on ImageNet-21k.
-  - Parameters were frozen to retain learned features.
+  - Added Adaptive Average Pooling to minimize overfitting.
   - **Fully Connected Layers:**
-    - First Layer: 1024 neurons, ReLU activation.
-    - Second Layer: 512 neurons, ReLU activation.
-    - Third Layer: 256 neurons, ReLU activation.
-  - **Final Layer:**
+    - First Layer: 128 neurons, ReLU activation.
     - Linear layer with 4 output neurons (corresponding to our four classes).
    
 The following table lists the hyperparameters used in our model:
 
 | Hyperparameter   | Value           |
 |------------------|-----------------|
-| Dropout Rate     | 0.25            |
-| Learning Rate    | 5e-5            |
+| Input Size       | 1222x638        |  
+| Dropout Rate     | 0.5             |
+| Weight Decay     | 0.05            |
+| Learning Rate    | 1e-5            |
 | Optimizer        | AdamW           |
-| Scheduler        | ReduceLROnPlateau|
-| Epochs           | 30              |
-| Batch Size       | 32              |
+| Batch Size       | 64              |
 | Patience         | 1               |
 
 ## Cross-Validation
-To ensure robust evaluation and to prevent overfitting, we employed 6-fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 100-110 samples per validation set).
+To ensure robust evaluation and to prevent overfitting, we employed 6 fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 110 samples per fold-validation set).
   
 ## Results
 Below are the results for the last epochs of each fold:
@@ -71,26 +68,26 @@ Below are the results for the last epochs of each fold:
 ### Fold-wise Results
 | Fold | Epochs | Train Loss | Val Loss | Val F1  | Accuracy | Precision | Recall |
 |------|-------|------------|----------|---------|----------|-----------|--------|
-| 1    | 7     | 0.3410     | 0.3753   | 0.8290  | 0.8300   | 0.8306    | 0.8200 |
-| 2    | 5     | 0.4011     | 0.3873   | 0.8304  | 0.8300   | 0.8405    | 0.8300 |
-| 3    | 8     | 0.3333     | 0.4006   | 0.8222  | 0.8200   | 0.8234    | 0.8156 |
-| 4    | 11    | 0.3135     | 0.2977   | 0.8750  | 0.8800   | 0.8735    | 0.8800 |
-| 5    | 5     | 0.4039     | 0.4531   | 0.7967  | 0.8000   | 0.8031    | 0.8000 |
-| 6    | 9     | 0.3273     | 0.3481   | 0.8227  | 0.8250   | 0.8257    | 0.8231 |
+| 1    | 8     | 0.1783     | 0.1848   | 0.9469  | 0.95     | 0.95      | 0.95   |
+| 2    | 7     | 0.1939     | 0.3229   | 0.8797  | 0.88     | 0.89      | 0.88   |
+| 3    | 8     | 0.1838     | 0.2047   | 0.9375  | 0.94     | 0.94      | 0.94   |
+| 4    | 11    | 0.0938     | 0.2221   | 0.9307  | 0.93     | 0.93      | 0.93   |
+| 5    | 10    | 0.1162     | 0.1798   | 0.9515  | 0.95     | 0.95      | 0.95   |
+| 6    | 5     | 0.4598     | 0.4382   | 0.8221  | 0.83     | 0.86      | 0.83   |
 
 ### Class-wise Average Metrics
 | Class           | Precision | Recall | F1-Score |
 |-----------------|-----------|--------|----------|
-| Control-Axial   | 0.8438    | 0.9033 | 0.8681   |
-| Control-Sagittal| 0.8069    | 0.8216 | 0.7978   |
-| MS-Axial        | 0.9087    | 0.8203 | 0.8541   |
-| MS-Sagittal     | 0.8410    | 0.7835 | 0.7975   |
+| Control-Axial   | 0.9534    | 0.8661 | 0.8998   |
+| Control-Sagittal| 0.9169    | 0.9201 | 0.9164   |
+| MS-Axial        | 0.8895    | 0.9538 | 0.9163   |
+| MS-Sagittal     | 0.9218    | 0.9092 | 0.9131   |
 
 ### Average Metrics across all Folds
 | Metric          | Value   |
 |-----------------|---------|
-| Accuracy        | 0.8319  |
-| F1 Score        | 0.8293  |
+| Accuracy        | 0.9123  |
+| F1 Score        | 0.9114  |
 
 
 <p align="left">
