@@ -26,14 +26,14 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 4. **MS-Sagittal:** Sagittal MRI images from individuals diagnosed with MS.
 
 <p align="left">
-<img src="appendix/C-A (24).png" width="150" alt="alt text">
-<img src="appendix/C-A (90).png" width="150" alt="alt text">
-<img src="appendix/C-S (13).png" width="150" alt="alt text">
-<img src="appendix/C-S (79).png" width="150" alt="alt text">
-<img src="appendix/MS-A (124).png" width="150" alt="alt text">
-<img src="appendix/MS-A (25).png" width="150" alt="alt text">
-<img src="appendix/MS-S (101).png" width="150" alt="alt text">
-<img src="appendix/MS-S (35).png" width="150" alt="alt text">
+<img src="appendix/C-A (24).png" width="250" alt="alt text">
+<img src="appendix/C-A (90).png" width="250" alt="alt text">
+<img src="appendix/C-S (13).png" width="250" alt="alt text">
+<img src="appendix/C-S (79).png" width="250" alt="alt text">
+<img src="appendix/MS-A (124).png" width="250" alt="alt text">
+<img src="appendix/MS-A (25).png" width="250" alt="alt text">
+<img src="appendix/MS-S (101).png" width="250" alt="alt text">
+<img src="appendix/MS-S (35).png" width="250" alt="alt text">
 <p/>
 
 ### Sample Distribution
