@@ -8,9 +8,7 @@ This repository contains the implementation of a Vision Transformer (ViT) model 
 By implementing the Vision Transformer (ViT) model for MRI scans and Multiple Sclerosis detection, we showcase the model's effectiveness in medical imaging applications.
 
 ## What is Multiple Sclerosis?
-Multiple Sclerosis (MS) is a chronic demyelinating disease characterized by the presence of plaques in the white matter of the central nervous system. These plaques can disrupt the flow of information within the brain, and between the brain and the rest of the body. MS can be diagnosed using MRI, which helps identify the characteristic lesions associated with the disease. Usual onset	is around age 20–50.
-
-Multiple sclerosis can cause a wide range of symptoms including fatigue, vision problems, mobility issues, numbness, cognitive changes, bladder and bowel dysfunction, pain, speech difficulties, sexual dysfunction, mood changes, heat sensitivity, and muscle spasticity, which vary in severity and occurrence among individuals.
+Multiple Sclerosis (MS) is a chronic demyelinating disease characterized by the presence of plaques in the white matter of the central nervous system. These plaques can disrupt the flow of information within the brain, and between the brain and the rest of the body. MS can be diagnosed using MRI, which helps identify the characteristic lesions associated with the disease. Usual onset	is around age 20–50. It can cause a wide range of symptoms including fatigue, vision problems, mobility issues, numbness, cognitive changes, bladder and bowel dysfunction, pain, speech difficulties, sexual dysfunction, mood changes, heat sensitivity, and muscle spasticity, which vary in severity and occurrence among individuals.
 
 <img src="appendix/applsci-12-04920-g001.png" width="450" alt="alt text">
 
