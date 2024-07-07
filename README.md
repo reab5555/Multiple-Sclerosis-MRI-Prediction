@@ -59,7 +59,7 @@ We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-pa
     - Linear layer with 4 output neurons (corresponding to our four classes).
 
 ## Results
-Below are the results for the last epochs of each fold and the average metrics across all folds:
+Below are the results for the last epochs of each fold:
 
 ### Fold-wise Results
 | Fold | Epochs | Train Loss | Val Loss | Val F1  | Accuracy | Precision | Recall |
