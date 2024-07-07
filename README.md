@@ -8,7 +8,18 @@ By implementing the Vision Transformer (ViT) model for MRI scans and Multiple Sc
 ## What is Multiple Sclerosis?
 Multiple Sclerosis (MS) is a chronic demyelinating disease characterized by the presence of plaques in the white matter of the central nervous system. These plaques can disrupt the flow of information within the brain, and between the brain and the rest of the body. MS can be diagnosed using MRI, which helps identify the characteristic lesions associated with the disease. Usual onset	is around age 20–50.
 
-## Dataset Classes
+## Dataset
+### Related Work and Dataset
+The dataset and initial modeling attempts are derived from the work by Macin et al. (2022). They proposed a computationally efficient model using Exemplar Multiple Parameters Local Phase Quantization (ExMPLPQ) combined with a k-nearest neighbor (kNN) classifier. Their model achieved high accuracy in detecting MS from MRI images.
+
+- **Original Article:** [An Accurate Multiple Sclerosis Detection Model Based on Exemplar Multiple Parameters Local Phase Quantization: ExMPLPQ](https://www.mdpi.com/2076-3417/12/10/4920)
+
+### Methodology Overview from Article
+**Dataset Description:**
+- MRI images were sourced from 72 MS patients and 59 healthy individuals.
+- Original dataset size: 3427 images (1652 axial, 1775 sagittal).
+- Ethical approval was obtained for the study, and images were read by medical experts.
+
 The dataset used in this project was acquired from a previous study by [Macin et al., 2022](https://www.mdpi.com/2076-3417/12/10/4920).  
 
 The dataset consists of axial and sagittal MRI images divided into four classes:
@@ -84,31 +95,6 @@ Below are the results for the last epochs of each fold:
 |-----------------|---------|
 | Accuracy        | 0.8319  |
 | F1 Score        | 0.8293  |
-
-## Related Work and Dataset
-The dataset and initial modeling attempts are derived from the work by Macin et al. (2022). They proposed a computationally efficient model using Exemplar Multiple Parameters Local Phase Quantization (ExMPLPQ) combined with a k-nearest neighbor (kNN) classifier. Their model achieved high accuracy in detecting MS from MRI images.
-
-- **Original Article:** [An Accurate Multiple Sclerosis Detection Model Based on Exemplar Multiple Parameters Local Phase Quantization: ExMPLPQ](https://www.mdpi.com/2076-3417/12/10/4920)
-
-### Methodology Overview from Article
-**Dataset Description:**
-- MRI images were sourced from 72 MS patients and 59 healthy individuals.
-- Original dataset size: 3427 images (1652 axial, 1775 sagittal).
-- Ethical approval was obtained for the study, and images were read by medical experts.
-
-**Model Description:**
-- Utilized LPQ for feature extraction, creating a feature vector from 3x3, 5x5, and 7x7 overlapping blocks.
-- Used iterative neighborhood component analysis (INCA) for feature selection.
-- Applied a k-nearest neighbor (kNN) algorithm for binary classification.
-
-**Performance:**
-- Achieved high classification accuracy rates using 10-fold cross-validation: 98.37% for axial, 97.75% for sagittal, and 98.22% for combined datasets.
-
-The dataset is publicly available and can be accessed from [Kaggle](https://www.kaggle.com/datasets/buraktaci/multiple-sclerosis).
-
-### Significant Findings
-- The ExMPLPQ model demonstrated that a computationally lightweight approach could achieve high accuracy in MS detection.
-- Their approach has potential clinical applications for high-throughput screening of brain MRI images in suspected MS cases.
 
 ## Conclusion
 In conclusion, our project aimed to build upon the existing research by applying modern deep learning techniques, primarily the Vision Transformer model, to classify MS from MRI images. Through meticulous cross-validation and fine-tuning, we achieved robust performance metrics, demonstrating the efficacy of ViT models in medical image classification tasks.
