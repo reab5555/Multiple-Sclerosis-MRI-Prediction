@@ -19,8 +19,6 @@ The dataset and initial modeling attempts are derived from the work by Macin et 
 - Original dataset size: 3427 images (1652 axial, 1775 sagittal).
 - Ethical approval was obtained for the study, and images were read by medical experts.
 
-The dataset used in this project was acquired from a previous study by [Macin et al., 2022](https://www.mdpi.com/2076-3417/12/10/4920).  
-
 The dataset consists of axial and sagittal MRI images divided into four classes:
 1. **Control-Axial:** Axial MRI images from healthy individuals.
 2. **Control-Sagittal:** Sagittal MRI images from healthy individuals.
