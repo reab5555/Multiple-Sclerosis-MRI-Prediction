@@ -106,8 +106,6 @@ In conclusion, our project aimed to build upon the existing research by applying
 
 ### Model Complexity and Interpretability
 - Vision Transformers are complex models, which makes interpreting the learned features challenging. Understanding why the model makes specific predictions is crucial in medical applications.
-- **Future Directions:** Employ model interpretability techniques like SHAP or LIME to better understand the model's decision-making process.
-
 
 ## Acknowledgments
 This project was made possible by the pioneering efforts of [Macin et al., 2022](https://www.mdpi.com/2076-3417/12/10/4920), whose data and initial study laid the groundwork for our research.
