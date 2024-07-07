@@ -98,11 +98,9 @@ In conclusion, our project aimed to build upon the existing research by applying
 ## Potential Problems and Future Directions
 ### Small Dataset
 - The current dataset, while balanced and sufficient for initial trials, is relatively small. Small datasets may not capture the full variability required for robust model training and generalization.
-- **Future Directions:** Acquire a larger dataset with more images to improve the model's ability to generalize to new data.
 
 ### Higher Resolution Images
 - Higher resolution images could provide more detailed information, potentially improving the model's ability to detect subtle features associated with MS.
-- **Future Directions:** Incorporate high-resolution MRI images in future datasets to leverage the detailed spatial information they provide.
 
 ### Model Complexity and Interpretability
 - Vision Transformers are complex models, which makes interpreting the learned features challenging. Understanding why the model makes specific predictions is crucial in medical applications.
