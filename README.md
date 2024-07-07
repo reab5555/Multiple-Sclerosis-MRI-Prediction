@@ -44,7 +44,7 @@ We fine-tuned only the final layers of the Vision Transformer, retaining the maj
   - Pre-trained on ImageNet-21k.
   - Added Adaptive Average Pooling to minimize overfitting.
   - **Fully Connected Layers:**
-    - First Layer: 128 neurons, ReLU activation.
+    - Connected Layer: 128 neurons, ReLU activation.
     - Linear layer with 4 output neurons (corresponding to our four classes).
    
 The following table lists the hyperparameters used in our model:
