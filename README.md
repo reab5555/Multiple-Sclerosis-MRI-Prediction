@@ -23,19 +23,6 @@ Each class contains 750 samples, ensuring a balanced dataset for training and ev
 ## Cross-Validation
 To ensure robust evaluation and to prevent overfitting, we employed 6-fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 100-110 samples per validation set).
 
-## Hyperparameters
-The following table lists the hyperparameters used in our model:
-
-| Hyperparameter   | Value           |
-|------------------|-----------------|
-| Dropout Rate     | 0.25            |
-| Learning Rate    | 5e-5            |
-| Optimizer        | AdamW           |
-| Scheduler        | ReduceLROnPlateau|
-| Epochs           | 30              |
-| Batch Size       | 32              |
-| Patience         | 1               |
-
 ## Model Architecture
 We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384` from the Hugging Face library. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
 
@@ -44,6 +31,9 @@ We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-pa
 - **Positional Encoding:** Added to the patch embeddings to maintain spatial information.
 - **Transformer Encoder:** Processes the encoded patches through multi-head self-attention layers and feed-forward neural networks.
 - **Classification Head:** The output is pooled and passed through a fully connected layer to generate final class probabilities.
+
+## Hyperparameters
+we fine-tuned only the final layers of the Vision Transformer, retaining the majority of the base model's pre-trained weights. This approach allowed us to leverage the robust feature representations learned from the large-scale ImageNet dataset while adapting the classifier to our specific task.
 
 ### Detailed Architecture
 - **Base Vision Transformer:**
@@ -57,6 +47,18 @@ We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-pa
     - Third Layer: 256 neurons, ReLU activation.
   - **Final Layer:**
     - Linear layer with 4 output neurons (corresponding to our four classes).
+   
+The following table lists the hyperparameters used in our model:
+
+| Hyperparameter   | Value           |
+|------------------|-----------------|
+| Dropout Rate     | 0.25            |
+| Learning Rate    | 5e-5            |
+| Optimizer        | AdamW           |
+| Scheduler        | ReduceLROnPlateau|
+| Epochs           | 30              |
+| Batch Size       | 32              |
+| Patience         | 1               |
 
 ## Results
 Below are the results for the last epochs of each fold:
@@ -84,9 +86,6 @@ Below are the results for the last epochs of each fold:
 |-----------------|---------|
 | Accuracy        | 0.8319  |
 | F1 Score        | 0.8293  |
-
-## Model Fine-Tuning
-In this project, we fine-tuned only the final layers of the Vision Transformer, retaining the majority of the base model's pre-trained weights. This approach allowed us to leverage the robust feature representations learned from the large-scale ImageNet dataset while adapting the classifier to our specific task.
 
 ## Related Work and Dataset
 The dataset and initial modeling attempts are derived from the work by Macin et al. (2022). They proposed a computationally efficient model using Exemplar Multiple Parameters Local Phase Quantization (ExMPLPQ) combined with a k-nearest neighbor (kNN) classifier. Their model achieved high accuracy in detecting MS from MRI images.
