@@ -108,33 +108,6 @@ In conclusion, our project aimed to build upon the existing research by applying
 ## Acknowledgments
 This project was made possible by the pioneering efforts of [Macin et al., 2022](https://www.mdpi.com/2076-3417/12/10/4920), whose data and initial study laid the groundwork for our research.
 
-## How to Use
-To replicate our results or extend the work, follow these steps:
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/yourusername/multiple-sclerosis-classification.git
-   cd multiple-sclerosis-classification
-   ```
-2. **Install Dependencies:**
-   Ensure you have the required packages. You can install them using:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Download the Dataset:**
-   Download the dataset from [Kaggle](https://www.kaggle.com/datasets/buraktaci/multiple-sclerosis) and place it in the appropriate directory.
-4. **Run the Training Script:**
-   To train the model, execute:
-   ```bash
-   python train.py
-   ```
-5. **Evaluate and Visualize Results:**
-   The script will save the trained model and generate performance plots. You can review these to understand the model's behavior.
-
-## Contact
-For any inquiries or contributions, please reach out to [your.email@example.com](mailto:your.email@example.com).
-
----
-
 **References:**
 - Macin, G., Tasci, B., Tasci, I., Faust, O., Barua, P.D., Dogan, S., Tuncer, T., Tan, R.-S., Acharya, U.R. An Accurate Multiple Sclerosis Detection Model Based on Exemplar Multiple Parameters Local Phase Quantization: ExMPLPQ. Appl. Sci. 2022, 12, 4920.
 
