@@ -96,7 +96,7 @@ Below are the results for the last epochs of each fold:
 <p/>
   
 ## Conclusion
-In conclusion, our project aimed to build upon the existing research by applying modern deep learning techniques, primarily the Vision Transformer model, to classify MS from MRI images. Through meticulous cross-validation and fine-tuning, we achieved robust performance metrics, demonstrating the efficacy of ViT models in medical image classification tasks.
+In conclusion, our project aimed to build upon the existing research by applying modern computer vision techniques, primarily the Vision Transformer model, to classify MS from MRI images. Through cross-validation and fine-tuning, we achieved robust performance metrics, demonstrating the efficacy of ViT models in medical image classification tasks.
 
 ## Potential Problems and Future Directions
 ### Small Dataset
