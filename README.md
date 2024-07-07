@@ -26,7 +26,7 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 4. **MS-Sagittal:** Sagittal MRI images from individuals diagnosed with MS.
 
 ### Sample Distribution
-Each class contains 750 samples (MRI images), ensuring a balanced dataset for training and evaluation.
+After we balanced the classes using downsampling, each class contains 750 samples (MRI images), ensuring a balanced dataset for training and evaluation.
 
 ## Model Architecture
 We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384` from the Hugging Face library. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
