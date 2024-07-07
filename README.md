@@ -39,8 +39,6 @@ we fine-tuned only the final layers of the Vision Transformer, retaining the maj
 - **Base Vision Transformer:**
   - Pre-trained on ImageNet-21k.
   - Parameters were frozen to retain learned features.
-- **Custom Classification Head:**
-  - **Dropout Layer:** Dropout probability of 0.25 to prevent overfitting.
   - **Fully Connected Layers:**
     - First Layer: 1024 neurons, ReLU activation.
     - Second Layer: 512 neurons, ReLU activation.
