@@ -58,12 +58,8 @@ We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-pa
   - **Final Layer:**
     - Linear layer with 4 output neurons (corresponding to our four classes).
 
-### Training Strategy
-We utilized the AdamW optimizer due to its effective weight decay and learning rate scheduling capabilities. The learning rate scheduler (`ReduceLROnPlateau`) monitored validation loss, reducing the learning rate when validation performance plateaued.
-
 ## Results
-### Cross-Validation Details
-We conducted training and evaluation across six folds. Below are the results for the last epochs of each fold and the average metrics across all folds:
+Below are the results for the last epochs of each fold and the average metrics across all folds:
 
 ### Fold-wise Results
 | Fold | Epoch | Train Loss | Val Loss | Val F1  | Accuracy | Precision | Recall |
