@@ -1,7 +1,9 @@
 # Multiple Sclerosis MRI Prediction
 
 ## Project Overview
-This repository contains the implementation of a Vision Transformer (ViT) model designed to predict Multiple Sclerosis (MS) from Magnetic Resonance Imaging (MRI) scans. The goal is to classify images into one of four categories: Control-Axial, Control-Sagittal, MS-Axial, and MS-Sagittal.
+This repository contains the implementation of a Vision Transformer (ViT) model designed to predict Multiple Sclerosis (MS) from Magnetic Resonance Imaging (MRI) scans. The goal is to classify images into one of four categories: Control-Axial, Control-Sagittal, MS-Axial, and MS-Sagittal. 
+
+By implementing the Vision Transformer (ViT) model for MRI scans and Multiple Sclerosis detection, we showcase the model's effectiveness in medical imaging applications.
 
 ## What is Multiple Sclerosis?
 Multiple Sclerosis (MS) is a chronic demyelinating disease characterized by the presence of plaques in the white matter of the central nervous system. These plaques can disrupt the flow of information within the brain, and between the brain and the rest of the body. MS can be diagnosed using MRI, which helps identify the characteristic lesions associated with the disease. Usual onset	is around age 20–50.
@@ -38,19 +40,10 @@ The following table lists the hyperparameters used in our model:
 We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384` from the Hugging Face library. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
 
 ### How Vision Transformer (ViT) Works
-- **Patch Embeddings:**
-  - An image is divided into fixed-size patches (e.g., 16x16).
-  - Each patch is flattened and linearly embedded into a fixed-size vector.
-  
-- **Positional Encoding:**
-  - Since Transformer models do not possess any inherent notion of sequential order, positional encodings are added to the patch embeddings to maintain spatial information.
-  
-- **Transformer Encoder:**
-  - The encoded patches are passed through a standard Transformer encoder, consisting of multi-head self-attention layers followed by feed-forward neural networks.
-  - This mechanism allows the model to capture contextual relationships between patches.
-
-- **Classification Head:**
-  - The output from the Transformer encoder is pooled and passed through a classification head (usually a fully connected layer) to get the final class probabilities.
+- **Patch Embeddings:** The input image is divided into fixed-size patches (e.g., 16x16), each of which is flattened and embedded into a vector.
+- **Positional Encoding:** Added to the patch embeddings to maintain spatial information.
+- **Transformer Encoder:** Processes the encoded patches through multi-head self-attention layers and feed-forward neural networks.
+- **Classification Head:** The output is pooled and passed through a fully connected layer to generate final class probabilities.
 
 ### Detailed Architecture
 - **Base Vision Transformer:**
