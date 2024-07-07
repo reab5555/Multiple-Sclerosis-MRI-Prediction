@@ -25,6 +25,11 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 3. **MS-Axial:** Axial MRI images from individuals diagnosed with MS.
 4. **MS-Sagittal:** Sagittal MRI images from individuals diagnosed with MS.
 
+<p align="left">
+<img src="appendix/learning_curve.png" width="450" alt="alt text">
+<img src="appendix/.png" width="450" alt="alt text">
+<p/>
+
 ### Sample Distribution
 After we balanced the classes using downsampling, each class contains 750 samples (MRI images), ensuring a balanced dataset for training and evaluation.
 
@@ -91,8 +96,8 @@ Below are the results for the last epochs of each fold:
 
 
 <p align="left">
-<img src="appendix/learning_curve.jpg" width="450" alt="alt text">
-<img src="appendix/confusion_matrix.jpg" width="450" alt="alt text">
+<img src="appendix/learning_curve.png" width="450" alt="alt text">
+<img src="appendix/confusion_matrix.png" width="450" alt="alt text">
 <p/>
   
 ## Conclusion
