@@ -26,7 +26,7 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 4. **MS-Sagittal:** Sagittal MRI images from individuals diagnosed with MS.
 
 ### Sample Distribution
-Each class contains 750 samples, ensuring a balanced dataset for training and evaluation.
+Each class contains 750 samples (MRI scans images), ensuring a balanced dataset for training and evaluation.
 
 ## Cross-Validation
 To ensure robust evaluation and to prevent overfitting, we employed 6-fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 100-110 samples per validation set).
