@@ -1,4 +1,4 @@
-# Multiple Sclerosis MRI Prediction
+# Multiple Sclerosis MRI Classification
 
 ## Project Overview
 This repository contains the implementation of a Vision Transformer (ViT) model designed to predict Multiple Sclerosis (MS) from Magnetic Resonance Imaging (MRI) scans. The goal is to classify images into one of four categories: Control-Axial, Control-Sagittal, MS-Axial, and MS-Sagittal. 
