@@ -28,9 +28,6 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 ### Sample Distribution
 Each class contains 750 samples (MRI images), ensuring a balanced dataset for training and evaluation.
 
-## Cross-Validation
-To ensure robust evaluation and to prevent overfitting, we employed 6-fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 100-110 samples per validation set).
-
 ## Model Architecture
 We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384` from the Hugging Face library. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
 
@@ -65,6 +62,9 @@ The following table lists the hyperparameters used in our model:
 | Epochs           | 30              |
 | Batch Size       | 32              |
 | Patience         | 1               |
+
+## Cross-Validation
+To ensure robust evaluation and to prevent overfitting, we employed 6-fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 100-110 samples per validation set).
 
 ## Results
 Below are the results for the last epochs of each fold:
