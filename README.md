@@ -62,7 +62,7 @@ We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-pa
 Below are the results for the last epochs of each fold and the average metrics across all folds:
 
 ### Fold-wise Results
-| Fold | Epoch | Train Loss | Val Loss | Val F1  | Accuracy | Precision | Recall |
+| Fold | Epochs | Train Loss | Val Loss | Val F1  | Accuracy | Precision | Recall |
 |------|-------|------------|----------|---------|----------|-----------|--------|
 | 1    | 7     | 0.3410     | 0.3753   | 0.8290  | 0.8300   | 0.8306    | 0.8200 |
 | 2    | 5     | 0.4011     | 0.3873   | 0.8304  | 0.8300   | 0.8405    | 0.8300 |
