@@ -1,4 +1,4 @@
-<img src="icon.jpeg" width="150" alt="alt text">
+<img src="appendix/icon.jpeg" width="150" alt="alt text">
 
 # Multiple Sclerosis MRI Classification
 
@@ -10,7 +10,7 @@ By implementing the Vision Transformer (ViT) model for MRI scans and Multiple Sc
 ## What is Multiple Sclerosis?
 Multiple Sclerosis (MS) is a chronic demyelinating disease characterized by the presence of plaques in the white matter of the central nervous system. These plaques can disrupt the flow of information within the brain, and between the brain and the rest of the body. MS can be diagnosed using MRI, which helps identify the characteristic lesions associated with the disease. Usual onset	is around age 20–50.
 
-<img src="applsci-12-04920-g001.png" width="450" alt="alt text">
+<img src="appendix/applsci-12-04920-g001.png" width="450" alt="alt text">
 
 ## Dataset
 The dataset and initial modeling attempts are derived from the work by Macin et al. (2022). They proposed a computationally efficient model using Exemplar Multiple Parameters Local Phase Quantization (ExMPLPQ) combined with a k-nearest neighbor (kNN) classifier. Their model achieved high accuracy in detecting MS from MRI images.
@@ -98,8 +98,8 @@ Below are the results for the last epochs of each fold:
 
 
 <p align="left">
-<img src="images/learning_curve.jpg" width="450" alt="alt text">
-<img src="images/confusion_matrix.jpg" width="450" alt="alt text">
+<img src="appendix/learning_curve.jpg" width="450" alt="alt text">
+<img src="appendix/confusion_matrix.jpg" width="450" alt="alt text">
 <p/>
   
 ## Conclusion
