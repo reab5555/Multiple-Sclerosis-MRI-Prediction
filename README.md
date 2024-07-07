@@ -33,7 +33,6 @@ The following table lists the hyperparameters used in our model:
 | Epochs           | 30              |
 | Batch Size       | 32              |
 | Patience         | 1               |
-| Device           | GPU if available|
 
 ## Model Architecture
 We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384` from the Hugging Face library. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
