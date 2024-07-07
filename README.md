@@ -25,6 +25,7 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 3. **MS-Axial:** Axial MRI images from individuals diagnosed with MS.
 4. **MS-Sagittal:** Sagittal MRI images from individuals diagnosed with MS.
 
+### MRI Samples for Control and MS
 <p align="left">
 <img src="appendix/C-A (24).png" width="200" alt="alt text">
 <img src="appendix/C-A (90).png" width="200" alt="alt text">
