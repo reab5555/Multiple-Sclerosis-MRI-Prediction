@@ -17,7 +17,7 @@ The dataset and initial modeling attempts are derived from the work by Macin et 
 
 **Original Article:** [An Accurate Multiple Sclerosis Detection Model Based on Exemplar Multiple Parameters Local Phase Quantization: ExMPLPQ](https://www.mdpi.com/2076-3417/12/10/4920)
 
-### Methodology Overview from Article
+### Overview of Article
 **Dataset Description:**
 - MRI images were sourced from 72 MS patients and 59 healthy individuals.
 - Original dataset size: 3427 images (1652 axial, 1775 sagittal).
