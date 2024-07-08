@@ -49,8 +49,6 @@ We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-pa
 - **Transformer Encoder:** Processes the encoded patches through multi-head self-attention layers and feed-forward neural networks.
 - **Classification Head:** The output is pooled and passed through a fully connected layer to generate final class probabilities.
 
-We fine-tuned only the final layers of the Vision Transformer, retaining the majority of the base model's pre-trained weights. This approach allowed us to leverage the robust feature representations learned from the large-scale ImageNet dataset while adapting the classifier to our specific task.
-
 ### Detailed Architecture
 - **Base Vision Transformer:**
   - Pre-trained on ImageNet-21k.
