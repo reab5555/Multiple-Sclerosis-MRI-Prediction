@@ -97,6 +97,7 @@ Below are the results for the last epochs of each fold:
 | Metric          | Value   |
 |-----------------|---------|
 | Accuracy        | 0.9435  |
+| Precision       | 0.9464  |
 | Recall          | 0.9282  |
 | F1 Score        | 0.9434  |
 
