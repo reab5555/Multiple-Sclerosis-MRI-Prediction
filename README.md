@@ -41,7 +41,7 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 After we balanced the classes using downsampling, each class contains 646 samples (MRI images), ensuring a balanced dataset for training and evaluation.
 
 ## Model Architecture
-We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384`. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
+We utilized and finetuned the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384` on our MRI images.
 
 ### Vision Transformer (ViT)
 - **Patch Embeddings:** The input image is divided into fixed-size patches (e.g., 16x16), each of which is flattened and embedded into a vector.
