@@ -38,7 +38,7 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 <p/>
 
 ### Sample Distribution
-After we balanced the classes using downsampling, each class contains 750 samples (MRI images), ensuring a balanced dataset for training and evaluation.
+After we balanced the classes using downsampling, each class contains 646 samples (MRI images), ensuring a balanced dataset for training and evaluation.
 
 ## Model Architecture
 We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384`. The core architecture and pre-trained weights of the ViT model were retained, while the final classification layers were fine-tuned on our dataset.
@@ -54,7 +54,7 @@ We utilized the Vision Transformer (ViT) model, specifically `google/vit-base-pa
   - Pre-trained on ImageNet-21k.
   - Added Adaptive Average Pooling to minimize overfitting.
   - **Fully Connected Layers:**
-    - Connected Layer: 128 neurons, ReLU activation.
+    - Connected Layer: 64 neurons, ReLU activation.
     - Linear layer with 4 output neurons (corresponding to our four classes).
    
 The following table lists the hyperparameters used in our model:
@@ -63,42 +63,42 @@ The following table lists the hyperparameters used in our model:
 |------------------|-----------------|
 | Input Size       | 1222x638        |  
 | Dropout Rate     | 0.5             |
-| Weight Decay     | 0.05            |
+| Weight Decay     | 0.01            |
 | Learning Rate    | 1e-5            |
 | Optimizer        | AdamW           |
-| Batch Size       | 64              |
+| Batch Size       | 32              |
 | Patience         | 1               |
 
 ## Cross-Validation
-To ensure robust evaluation and to prevent overfitting, we employed 6 fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 110 samples per fold-validation set).
+To ensure robust evaluation and to prevent overfitting, we employed 6 fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 108 samples per fold-validation set).
   
 ## Results
 Below are the results for the last epochs of each fold:
 
 ### Fold-wise Results
 | Fold | Epochs | Train Loss | Val Loss | Val F1  | Accuracy | Precision | Recall |
-|------|-------|------------|----------|---------|----------|-----------|--------|
-| 1    | 8     | 0.1783     | 0.1848   | 0.9469  | 0.95     | 0.95      | 0.95   |
-| 2    | 7     | 0.1939     | 0.3229   | 0.8797  | 0.88     | 0.89      | 0.88   |
-| 3    | 8     | 0.1838     | 0.2047   | 0.9375  | 0.94     | 0.94      | 0.94   |
-| 4    | 11    | 0.0938     | 0.2221   | 0.9307  | 0.93     | 0.93      | 0.93   |
-| 5    | 10    | 0.1162     | 0.1798   | 0.9515  | 0.95     | 0.95      | 0.95   |
-| 6    | 5     | 0.4598     | 0.4382   | 0.8221  | 0.83     | 0.86      | 0.83   |
+|------|--------|------------|----------|---------|----------|-----------|--------|
+| 1    | 10     | 0.0907     | 0.2323   | 0.9323  | 0.93     | 0.94      | 0.93   |
+| 2    | 9      | 0.1007     | 0.1824   | 0.9513  | 0.95     | 0.95      | 0.95   |
+| 3    | 9      | 0.0961     | 0.1740   | 0.9489  | 0.95     | 0.95      | 0.95   |
+| 4    | 6      | 0.1852     | 0.2576   | 0.9233  | 0.92     | 0.93      | 0.92   |
+| 5    | 8      | 0.1307     | 0.1447   | 0.9628  | 0.96     | 0.96      | 0.96   |
+| 6    | 9      | 0.1108     | 0.1928   | 0.9418  | 0.94     | 0.94      | 0.94   |
 
 ### Class-wise Average Metrics
 | Class           | Precision | Recall | F1-Score |
 |-----------------|-----------|--------|----------|
-| Control-Axial   | 0.9534    | 0.8661 | 0.8998   |
-| Control-Sagittal| 0.9169    | 0.9201 | 0.9164   |
-| MS-Axial        | 0.8895    | 0.9538 | 0.9163   |
-| MS-Sagittal     | 0.9218    | 0.9092 | 0.9131   |
+| Control-Axial   | 0.9359    | 0.9675 | 0.9513   |
+| Control-Sagittal| 0.9031    | 0.9799 | 0.9390   |
+| MS-Axial        | 0.9683    | 0.9335 | 0.9504   |
+| MS-Sagittal     | 0.9789    | 0.8934 | 0.9330   |
 
 ### Average Metrics across all Folds
 | Metric          | Value   |
 |-----------------|---------|
-| Accuracy        | 0.9123  |
-| F1 Score        | 0.9114  |
-
+| Accuracy        | 0.9435  |
+| Recall          | 0.9282  |
+| F1 Score        | 0.9434  |
 
 <img src="appendix/learning_curve.png" width="450" alt="alt text">
 <img src="appendix/confusion_matrix.png" width="450" alt="alt text">
