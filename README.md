@@ -101,8 +101,8 @@ Below are the results for the last epochs of each fold:
 | Recall          | 0.9282  |
 | F1 Score        | 0.9434  |
 
-<img src="appendix/learning_curve.png" width="450" alt="alt text">
-<img src="appendix/confusion_matrix.png" width="450" alt="alt text">
+<img src="appendix/learning_curve.png" width="400" alt="alt text">
+<img src="appendix/confusion_matrix.png" width="400" alt="alt text">
   
 ## Conclusion
 In conclusion, our project aimed to build upon the existing research by applying modern computer vision techniques, primarily the Vision Transformer model, to classify MS from MRI images. Through cross-validation and fine-tuning, we achieved robust performance metrics, demonstrating the efficacy of ViT models in medical image classification tasks.
