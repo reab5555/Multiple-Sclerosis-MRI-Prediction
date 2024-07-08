@@ -76,14 +76,14 @@ To ensure robust evaluation and to prevent overfitting, we employed 6 fold cross
 Below are the results for the last epochs of each fold:
 
 ### Fold-wise Results
-| Fold | Epochs | Train Loss | Val Loss | Val F1  | Accuracy | Precision | Recall |
+| Fold | Epochs | Train Loss | Val Loss | F1      | Accuracy | Precision | Recall |
 |------|--------|------------|----------|---------|----------|-----------|--------|
-| 1    | 10     | 0.0907     | 0.2323   | 0.9323  | 0.93     | 0.94      | 0.93   |
-| 2    | 9      | 0.1007     | 0.1824   | 0.9513  | 0.95     | 0.95      | 0.95   |
-| 3    | 9      | 0.0961     | 0.1740   | 0.9489  | 0.95     | 0.95      | 0.95   |
-| 4    | 6      | 0.1852     | 0.2576   | 0.9233  | 0.92     | 0.93      | 0.92   |
-| 5    | 8      | 0.1307     | 0.1447   | 0.9628  | 0.96     | 0.96      | 0.96   |
-| 6    | 9      | 0.1108     | 0.1928   | 0.9418  | 0.94     | 0.94      | 0.94   |
+| 1    | 10     | 0.0907     | 0.2323   | 0.93  | 0.93     | 0.94      | 0.93   |
+| 2    | 9      | 0.1007     | 0.1824   | 0.95  | 0.95     | 0.95      | 0.95   |
+| 3    | 9      | 0.0961     | 0.1740   | 0.94  | 0.95     | 0.95      | 0.95   |
+| 4    | 6      | 0.1852     | 0.2576   | 0.92  | 0.92     | 0.93      | 0.92   |
+| 5    | 8      | 0.1307     | 0.1447   | 0.96  | 0.96     | 0.96      | 0.96   |
+| 6    | 9      | 0.1108     | 0.1928   | 0.94  | 0.94     | 0.94      | 0.94   |
 
 ### Class-wise Average Metrics
 | Class           | Precision | Recall | F1-Score |
