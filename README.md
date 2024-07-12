@@ -6,7 +6,7 @@
 This repository contains the implementation of a Vision Transformer (ViT) model finetuned and designed to predict Multiple Sclerosis (MS) from Magnetic Resonance Imaging (MRI) scans.
 
 What helps the model distinguish between an MRI scan of an MS patient and a healthy subject are clear lesions in different areas of the brain that can be distinguished in the MRI scans.
-By implementing the Vision Transformer (ViT) model for MRI scans and Multiple Sclerosis detection, we showcase the model's effectiveness in medical imaging applications to detect such lesions.
+By implementing the Vision Transformer (ViT) model for MRI scans and Multiple Sclerosis detection, we showcase the model's effectiveness in medical imaging applications.
 
 ## What is Multiple Sclerosis?
 Multiple Sclerosis (MS) is a chronic demyelinating disease characterized by the presence of plaques in the white matter of the central nervous system. These plaques can disrupt the flow of information within the brain, and between the brain and the rest of the body. MS can be diagnosed using MRI, which helps identify the characteristic lesions associated with the disease. Usual onset	is around age 20–50. 
