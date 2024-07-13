@@ -102,8 +102,8 @@ Below are the results for the last epochs of each fold:
 | MS              | 0.9527    | 0.9180 | 0.9335   |
 
 <p align="left">
-<img src="appendix/learning_curve.png" width="400" alt="alt text">
-<img src="appendix/confusion_matrix.png" width="400" alt="alt text">
+<img src="appendix/learning_curve.png" width="500" alt="alt text">
+<img src="appendix/confusion_matrix.png" width="300" alt="alt text">
 </p>
 
 ## Conclusion
