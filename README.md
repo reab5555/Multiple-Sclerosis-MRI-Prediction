@@ -39,7 +39,8 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 <p/>
 
 ### Sample Distribution
-After we balanced the classes using downsampling, each class contains 646 samples (MRI images), ensuring a balanced dataset for training and evaluation.
+We have to classes, MS or Non-MS. 
+After we balanced the classes using downsampling, each class contains 1293 samples (MRI images), ensuring a balanced dataset for training and evaluation.
 
 ## Model Architecture
 We utilized and finetuned the Vision Transformer (ViT) model, specifically `google/vit-base-patch16-384` on our MRI dataset images.
@@ -55,23 +56,23 @@ We utilized and finetuned the Vision Transformer (ViT) model, specifically `goog
   - Pre-trained on ImageNet-21k.
   - Added Adaptive Average Pooling to minimize overfitting.
   - **Fully Connected Layers:**
-    - Connected Layer: 64 neurons, ReLU activation.
-    - Linear layer with 4 output neurons (corresponding to our four classes).
+    - Connected Layer: 128 neurons, ReLU activation.
+    - Linear layer with single output (1 or 0) for binary classification.
    
 The following table lists the hyperparameters used in our model:
 
 | Hyperparameter   | Value           |
 |------------------|-----------------|
-| Input Size       | 1222x638        |  
+| Input Size       | 384x384         |  
 | Dropout Rate     | 0.5             |
 | Weight Decay     | 0.01            |
 | Learning Rate    | 1e-5            |
 | Optimizer        | AdamW           |
-| Batch Size       | 32              |
+| Batch Size       | 8               |
 | Patience         | 1               |
 
 ### Cross-validation
-To ensure robust evaluation and to prevent overfitting, we employed 6 fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 108 samples per fold-validation set).
+To ensure robust evaluation and to prevent overfitting, we employed 6 fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 431 samples per fold-validation set).
   
 ## Results
 Below are the results for the last epochs of each fold:
@@ -79,34 +80,32 @@ Below are the results for the last epochs of each fold:
 ### Fold-wise Results
 | Fold | Epochs | Train Loss | Val Loss | F1      | Accuracy | Precision | Recall |
 |------|--------|------------|----------|---------|----------|-----------|--------|
-| 1    | 10     | 0.0907     | 0.2323   | 0.93  | 0.93     | 0.94      | 0.93   |
-| 2    | 9      | 0.1007     | 0.1824   | 0.95  | 0.95     | 0.95      | 0.95   |
-| 3    | 9      | 0.0961     | 0.1740   | 0.94  | 0.95     | 0.95      | 0.95   |
-| 4    | 6      | 0.1852     | 0.2576   | 0.92  | 0.92     | 0.93      | 0.92   |
-| 5    | 8      | 0.1307     | 0.1447   | 0.96  | 0.96     | 0.96      | 0.96   |
-| 6    | 9      | 0.1108     | 0.1928   | 0.94  | 0.94     | 0.94      | 0.94   |
-
-### Class-wise Average Metrics
-| Class           | Precision | Recall | F1-Score |
-|-----------------|-----------|--------|----------|
-| Control-Axial   | 0.9359    | 0.9675 | 0.9513   |
-| Control-Sagittal| 0.9031    | 0.9799 | 0.9390   |
-| MS-Axial        | 0.9683    | 0.9335 | 0.9504   |
-| MS-Sagittal     | 0.9789    | 0.8934 | 0.9330   |
+| 1    | 3      | 0.5596     | 0.2153   | 0.92    | 0.92     | 0.92      | 0.92   |
+| 2    | 6      | 0.5402     | 0.1795   | 0.94    | 0.94     | 0.94      | 0.94   |
+| 3    | 4      | 0.5443     | 0.2065   | 0.92    | 0.92     | 0.93      | 0.92   |
+| 4    | 4      | 0.5150     | 0.2093   | 0.94    | 0.94     | 0.94      | 0.94   |
+| 5    | 5      | 0.5281     | 0.1826   | 0.95    | 0.95     | 0.95      | 0.95   |
+| 6    | 5      | 0.5337     | 0.2232   | 0.94    | 0.94     | 0.95      | 0.94   |
 
 ### Average Metrics across all Folds
 | Metric          | Value   |
 |-----------------|---------|
-| Accuracy        | 0.9435  |
-| Precision       | 0.9464  |
-| Recall          | 0.9282  |
-| F1 Score        | 0.9434  |
+| Accuracy        | 0.9346  |
+| Precision       | 0.9378  |
+| Recall          | 0.9346  |
+| F1 Score        | 0.9345  |
+
+### Class-wise Average Metrics
+| Class           | Precision | Recall | F1-Score |
+|-----------------|-----------|--------|----------|
+| NON-MS          | 0.9229    | 0.9513 | 0.9356   |
+| MS              | 0.9527    | 0.9180 | 0.9335   |
 
 <img src="appendix/learning_curve.png" width="400" alt="alt text">
 <img src="appendix/confusion_matrix.png" width="400" alt="alt text">
   
 ## Conclusion
-In conclusion, our project aimed to build upon the existing research by applying modern computer vision techniques, primarily the Vision Transformer model, to classify MS from MRI images. Through cross-validation and fine-tuning, we achieved robust performance metrics, demonstrating the efficacy of ViT models in medical image classification tasks, with an average Recall of 92%.
+In conclusion, our project aimed to build upon the existing research by applying modern computer vision techniques, primarily the Vision Transformer model, to classify MS from MRI images. Through cross-validation and fine-tuning, we achieved robust performance metrics, demonstrating the efficacy of ViT models in medical image classification tasks, with an average Recall of 93%.
 
 ## Potential Problems and Future Directions
 ### Small Dataset
