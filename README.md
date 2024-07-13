@@ -26,6 +26,9 @@ The dataset consists of axial and sagittal MRI images divided into four classes:
 3. **MS-Axial:** Axial MRI images from individuals diagnosed with MS.
 4. **MS-Sagittal:** Sagittal MRI images from individuals diagnosed with MS.
 
+### Criterions for diagnostic labeling of MS:
+Interpretation of MRI images requires experts to manually scrutinize multiple contiguous image sections for the presence of white matter lesions, with care being taken to distinguish MS plaques from lesions associated with diseases that present with similar symptoms, e.g., ischemic gliosis and central nervous system vasculitis [14,15,16]. MS plaques are hyperintense in T2 sequence, oval-round shaped, at least 3 mm in size, with asymmetric distribution. The typical location of MS plaques is as follows: (1) periventricular: adjacent to the lateral ventricles; (2) juxtracortical and cortical: localized to U fibers; (3) infratentorial: located unilaterally or bilaterally paramedian adjacent to the brain stem, cerebellum, and 4th ventricle; (4) spinal cord: cervical and thoracic localized, shorter than two vertebral segments, axially wedge-shaped, sagittal cigarette shaped, localized in peripherally located posterior and lateral columns [12]. 
+
 ### MRI Samples for Control and MS
 <p align="left">
 <img src="appendix/C-A (24).png" width="200" alt="alt text">
