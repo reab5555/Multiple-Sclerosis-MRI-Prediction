@@ -69,7 +69,6 @@ The following table lists the hyperparameters used in our model:
 | Learning Rate    | 1e-5            |
 | Optimizer        | AdamW           |
 | Batch Size       | 8               |
-| Patience         | 1               |
 
 ### Cross-validation
 To ensure robust evaluation and to prevent overfitting, we employed 6 fold cross-validation. This approach divides the dataset into six subsets, training the model on five subsets while using the sixth for validation (around 431 samples per fold-validation set).
