@@ -1,6 +1,6 @@
 <img src="appendix/icon.jpeg" width="150" alt="alt text">
 
-# Multiple Sclerosis MRI Classification
+# Multiple Sclerosis Prediction from MRI Scans
 
 ## Project Overview
 This repository contains the implementation of a Vision Transformer (ViT) model finetuned and designed to predict Multiple Sclerosis (MS) from Magnetic Resonance Imaging (MRI) scans.
