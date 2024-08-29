@@ -5,6 +5,7 @@ from PIL import Image
 import gradio as gr
 import plotly.graph_objects as go
 from transformers import ViTImageProcessor, ViTForImageClassification
+import numpy as np
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -40,7 +41,14 @@ model.to(device)
 model.eval()
 
 def predict(image):
-    img = Image.fromarray(image.astype('uint8'), 'RGB')
+    if image is None:
+        return "No image provided", None
+
+    if isinstance(image, str):  # If image is a file path
+        img = Image.open(image).convert('RGB')
+    else:  # If image is a numpy array
+        img = Image.fromarray(image.astype('uint8'), 'RGB')
+
     img = img.resize((384, 384))
     inputs = image_processor(images=img, return_tensors="pt")
     pixel_values = inputs['pixel_values'].to(device)
@@ -74,23 +82,42 @@ def load_readme():
         with open('README_DESC.md', 'r') as file:
             return file.read()
     except FileNotFoundError:
-        return "README.md file not found. Please make sure it exists in the same directory as this script."
+        return "README_DESC.md file not found. Please make sure it exists in the same directory as this script."
+
+# Example images
+example_images = [
+    "examples/C-A (44).png",
+    "examples/C-S (362).png",
+    "examples/MS-A (9).png",
+    "examples/MS-S (19).png"
+]
 
 with gr.Blocks() as demo:
     gr.Markdown("# MS Prediction App")
-    
+
     with gr.Tabs():
         with gr.TabItem("Prediction"):
-            gr.Markdown("## Upload an MRI scan image to predict MS or Non-MS patient.")
+            gr.Markdown("## Upload an MRI scan image or use an example to predict MS or Non-MS patient.")
             with gr.Row():
-                input_image = gr.Image()
+                input_image = gr.Image(type="numpy")
             predict_button = gr.Button("Predict")
             output_text = gr.Textbox()
             output_plot = gr.Plot()
-        
+
+            gr.Markdown("## Or choose one of the sample images below:")
+            with gr.Row():
+                for i, img_path in enumerate(example_images):
+                    with gr.Column():
+                        gr.Image(img_path, show_label=False)
+                        sample_button = gr.Button(f"Use Sample {i+1}")
+                        sample_button.click(
+                            lambda x=img_path: predict(x),
+                            outputs=[output_text, output_plot]
+                        )
+
         with gr.TabItem("Description"):
             readme_content = gr.Markdown(load_readme())
-    
+
     predict_button.click(
         predict,
         inputs=input_image,
