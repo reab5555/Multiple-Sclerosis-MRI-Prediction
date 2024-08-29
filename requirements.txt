@@ -1,0 +1,7 @@
+torch
+torchvision
+transformers
+pillow
+gradio
+plotly
+numpy
