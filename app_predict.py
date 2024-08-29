@@ -86,10 +86,10 @@ def load_readme():
 
 # Example images
 example_images = [
-    "examples/C-A (44).png",
-    "examples/C-S (362).png",
-    "examples/MS-A (9).png",
-    "examples/MS-S (19).png"
+    "appendix/C-A (44).png",
+    "appendix/C-S (362).png",
+    "appendix/MS-A (9).png",
+    "appendix/MS-S (19).png"
 ]
 
 with gr.Blocks() as demo:
